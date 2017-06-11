@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://blog.ken.moe/images/uml/Strategy.JPG">
 <meta property="og:image" content="http://blog.ken.moe/images/uml/Observer.JPG">
 <meta property="og:image" content="http://blog.ken.moe/images/uml/Bridge.JPG">
-<meta property="og:updated_time" content="2017-06-11T17:31:45.000Z">
+<meta property="og:updated_time" content="2017-06-11T17:34:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GoF_in_javascript">
 <meta name="twitter:description" content="GoF 在前端开发中的应用导语再具体设计中应用设计模式能够方便我们对模型的理解与平时的交流, 并且经过前任大师们总结的模式能够有效提高架构的质量, 如今B/S广泛应用, 前端开发业务逻辑愈发复杂, 非常需要依赖模式来进行开发, 但是GoF的design pattern成书之时, web应用还没有广泛流行, 也无法讨论它总结的模式在前端开发中的有效性, 并且js的原型链继承方式无法与原来的oop想契">
@@ -190,6 +190,7 @@
   </div>
   <div class="article-entry">
     <h1 id="GoF-在前端开发中的应用"><a href="#GoF-在前端开发中的应用" class="headerlink" title="GoF 在前端开发中的应用"></a>GoF 在前端开发中的应用</h1><h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>再具体设计中应用设计模式能够方便我们对模型的理解与平时的交流, 并且经过前任大师们总结的模式能够有效提高架构的质量, 如今B/S广泛应用, 前端开发业务逻辑愈发复杂, 非常需要依赖模式来进行开发, 但是GoF的design pattern成书之时, web应用还没有广泛流行, 也无法讨论它总结的模式在前端开发中的有效性, 并且js的原型链继承方式无法与原来的oop想契合, 所以我在开发中尝试使用js改写实现了几个常用模式并探讨了其应用</p>
+<a id="more"></a>
 <h2 id="Creational"><a href="#Creational" class="headerlink" title="Creational"></a>Creational</h2><h3 id="Singleton模式"><a href="#Singleton模式" class="headerlink" title="Singleton模式"></a>Singleton模式</h3><h4 id="uml"><a href="#uml" class="headerlink" title="uml"></a>uml</h4><p><img src="/images/uml/Singleton.JPG" alt="img"></p>
 <h4 id="code"><a href="#code" class="headerlink" title="code:"></a>code:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singleton</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> Singleton.instance === <span class="string">'object'</span>)</div><div class="line">        <span class="keyword">return</span> Singleton.instance;</div><div class="line"></div><div class="line">    Singleton.instance = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = Singleton;</div></pre></td></tr></table></figure>
 <p>原来的设计中, 获取实例需要通过Instance()静态方法, 而在js中, 对象构造子即为函数, 可以在构造子中完成获取实例的操作.</p>
