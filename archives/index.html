@@ -8,7 +8,7 @@
 
 <title>
   
-    Archive
+    归档
   
 </title>
 
@@ -97,22 +97,22 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES2015-LiveScript/">ES2015 LiveScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GoF/">GoF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">2</span></li></ul>
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">2</span></li></ul>
               </li>
             
           
@@ -198,40 +198,39 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="GoF-在前端开发中的应用"><a href="#GoF-在前端开发中的应用" class="headerlink" title="GoF 在前端开发中的应用"></a>GoF 在前端开发中的应用</h1>
-        
-      </div>
-    </div>
+          <h1 id="GoF-在前端开发中的应用"><a href="#GoF-在前端开发中的应用" class="headerlink" title="GoF 在前端开发中的应用"></a>GoF 在前端开发中的应用</h1><h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>再具体设计中应用设计模式能够方便我们对模型的理解与平时的交流, 并且经过前任大师们总结的模式能够有效提高架构的质量, 如今B/S广泛应用, 前端开发业务逻辑愈发复杂, 非常需要依赖模式来进行开发, 但是GoF的design pattern成书之时, web应用还没有广泛流行, 也无法讨论它总结的模式在前端开发中的有效性, 并且js的原型链继承方式无法与原来的oop想契合, 所以我在开发中尝试使用js改写实现了几个常用模式并探讨了其应用</p>
+<h2 id="Creational"><a href="#Creational" class="headerlink" title="Creational"></a>Creational</h2><h3 id="Singleton模式"><a href="#Singleton模式" class="headerlink" title="Singleton模式"></a>Singleton模式</h3><h4 id="uml"><a href="#uml" class="headerlink" title="uml"></a>uml</h4><p><img src="/images/uml/Singleton.JPG" alt="img"></p>
+<h4 id="code"><a href="#code" class="headerlink" title="code:"></a>code:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singleton</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> Singleton.instance === <span class="string">'object'</span>)</div><div class="line">        <span class="keyword">return</span> Singleton.instance;</div><div class="line"></div><div class="line">    Singleton.instance = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = Singleton;</div></pre></td></tr></table></figure>
+<p>原来的设计中, 获取实例需要通过Instance()静态方法, 而在js中, 对象构造子即为函数, 可以在构造子中完成获取实例的操作.</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>在前端中, 单例模式也是应用非常广泛的模式, spa需要缓存编译好的模板, 数据, 引用类库都是单例.</p>
+<h3 id="Factory模式"><a href="#Factory模式" class="headerlink" title="Factory模式"></a>Factory模式</h3><h4 id="uml-1"><a href="#uml-1" class="headerlink" title="uml"></a>uml</h4><p><img src="/images/uml/Factory.JPG" alt="factory"></p>
+<h4 id="code-1"><a href="#code-1" class="headerlink" title="code:"></a>code:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bmwFactory</span>(<span class="params">type</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (type === <span class="string">'X5'</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Bmw(type, <span class="number">108000</span>, <span class="number">300</span>);</div><div class="line">    <span class="keyword">if</span> (type === <span class="string">'X6'</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Bmw(type, <span class="number">111000</span>, <span class="number">320</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bmw</span>(<span class="params">model, price, maxSpeed</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.model = model;</div><div class="line">    <span class="keyword">this</span>.price = price;</div><div class="line">    <span class="keyword">this</span>.maxSpeed = maxSpeed;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = bmwFactory;</div></pre></td></tr></table></figure>
+<p>同样的, 利用js构造子的特性可以将FactoryMethod逻辑实现在构造中</p>
+<h4 id="应用-1"><a href="#应用-1" class="headerlink" title="应用:"></a>应用:</h4><p>前端中存在多种功能相似类型组件时, 经常会使用工厂模式, 比如一个scrollLayout工厂, 可以接受grid类型和list类型, 根据此来构造具有一个滚动方向的容器或者两个滚动方向的容器.</p>
+<h3 id="Prototype模式"><a href="#Prototype模式" class="headerlink" title="Prototype模式"></a>Prototype模式</h3><h4 id="uml-2"><a href="#uml-2" class="headerlink" title="uml"></a>uml</h4><p><img src="/images/uml/Prototype.JPG" alt="prototype"></p>
+<h4 id="code-2"><a href="#code-2" class="headerlink" title="code:"></a>code:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sheep</span>(<span class="params">name, weight</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.weight = weight;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Sheep.prototype.clone = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Sheep(<span class="keyword">this</span>.name, <span class="keyword">this</span>.weight);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = Sheep;</div></pre></td></tr></table></figure>
+<p>Prototype模式与js的prototype继承不是一个概念</p>
+<h4 id="应用-2"><a href="#应用-2" class="headerlink" title="应用"></a>应用</h4><p>用于实体对象的深复制, js原生的引用复制深复制, 使用原型模式来clone自身实现深复制方法</p>
+<h2 id="Behavior"><a href="#Behavior" class="headerlink" title="Behavior"></a>Behavior</h2><h3 id="Strategy模式"><a href="#Strategy模式" class="headerlink" title="Strategy模式"></a>Strategy模式</h3><p>uml:</p>
+<p><img src="/images/uml/Strategy.JPG" alt="strategy"></p>
+<p>code</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ShoppingCart</span>(<span class="params">discount</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.discount = discount;</div><div class="line">    <span class="keyword">this</span>.amount = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ShoppingCart.prototype.setAmount = <span class="function"><span class="keyword">function</span>(<span class="params">amount</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.amount = amount;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">ShoppingCart.prototype.checkout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.discount(<span class="keyword">this</span>.amount);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">guestStrategy</span>(<span class="params">amount</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> amount;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">regularStrategy</span>(<span class="params">amount</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> amount * <span class="number">0.9</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">premiumStrategy</span>(<span class="params">amount</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> amount * <span class="number">0.8</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = [ShoppingCart, guestStrategy, regularStrategy, premiumStrategy];</div></pre></td></tr></table></figure>
+<p>应用:</p>
+<p>应用中经常需要动态的切换计算数据算法, 例如用户VIP等级不同导致商品折扣不同, 此时就可以应用策略模式</p>
+<h3 id="Observer模式"><a href="#Observer模式" class="headerlink" title="Observer模式"></a>Observer模式</h3><p>uml</p>
+<p><img src="/images/uml/Observer.JPG" alt="observer"></p>
+<p>code</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Product</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.price = <span class="number">0</span>;</div><div class="line">    <span class="keyword">this</span>.actions = [];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Product.prototype.setBasePrice = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.price = val;</div><div class="line">    <span class="keyword">this</span>.notifyAll();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Product.prototype.register = <span class="function"><span class="keyword">function</span>(<span class="params">observer</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.actions.push(observer);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Product.prototype.unregister = <span class="function"><span class="keyword">function</span>(<span class="params">observer</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.actions.remove.filter(<span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> el !==  observer;</div><div class="line">    &#125;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Product.prototype.notifyAll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.actions.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</div><div class="line">        el.update(<span class="keyword">this</span>);</div><div class="line">    &#125;.bind(<span class="keyword">this</span>));</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> fees = &#123;</div><div class="line">    update: <span class="function"><span class="keyword">function</span>(<span class="params">product</span>) </span>&#123;</div><div class="line">        product.price = product.price * <span class="number">1.2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> proft = &#123;</div><div class="line">    update: <span class="function"><span class="keyword">function</span>(<span class="params">product</span>) </span>&#123;</div><div class="line">        product.price = product.price * <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = [Product, fees, proft];</div></pre></td></tr></table></figure>
+<p>应用</p>
+<p>现代spa中模板绑定是必要功能, 而Observer模式很好地提供了监控数据修改并作出相应的解决方案, 我们项目的vue框架, 就通过劫持字段getter setter应用Observer模式实现了view的动态更新和数据依赖更新响应的问题</p>
+<h2 id="Structural"><a href="#Structural" class="headerlink" title="Structural"></a>Structural</h2><h3 id="Bridge模式"><a href="#Bridge模式" class="headerlink" title="Bridge模式"></a>Bridge模式</h3><p>uml</p>
+<p><img src="/images/uml/Bridge.JPG" alt="bridge"></p>
+<p>code</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">EpsonPrinter</span>(<span class="params">ink</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ink = ink();</div><div class="line">&#125;</div><div class="line">EpsonPrinter.prototype.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Printer: Epson, Ink: "</span> + <span class="keyword">this</span>.ink;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">HPprinter</span>(<span class="params">ink</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ink = ink();</div><div class="line">&#125;</div><div class="line">HPprinter.prototype.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Printer: HP, Ink: "</span> + <span class="keyword">this</span>.ink;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">acrylicInk</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"acrylic-based"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">alcoholInk</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"alcohol-based"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = [EpsonPrinter, HPprinter, acrylicInk, alcoholInk];</div></pre></td></tr></table></figure>
+<p>应用</p>
+<p>桥接模式解决了多个抽象交叉导致无法复用的情况, 在前端中, 比较常见的场景是数据可以从服务器中获取也可以从本地获取, 处理后可以推送至服务器也可以保存至缓存, 通常写法只能是重复编写两种数据源推送至不同数据目的的方法, 应用桥接模式只需要实现两种抽象数据源和两种推送器</p>
+<h2 id="结"><a href="#结" class="headerlink" title="结"></a>结</h2><p>23种模式每个都是精华, 需要好好研究学习, 但是开发过程不可能一次遇到那么多问题, 多个模式每个都覆盖也不现实, 所以暂且取上述几个, 这篇文章就算作开篇, 日后遇到其他模式的场景在续文补充</p>
 
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/06/11/javascript/" >
-  javascript
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/06/11/javascript/"><span class="article-date">
-  2017-06-11
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
         
       </div>
     </div>
@@ -332,7 +331,7 @@
           <p>随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟babel也是编译器嘛. 但是为了更好地熟悉ES6的新特性, 方便阅读其他项目的源码(毕竟ls这货有些小众), 在此将ES6新增的语法特性与ls做了下对比</p>
           <p>
             <a href="/2016/08/03/ES2015vsLivescript语法糖比较/">
-              Read More
+              阅读全文
             </a>
           </p>
         
