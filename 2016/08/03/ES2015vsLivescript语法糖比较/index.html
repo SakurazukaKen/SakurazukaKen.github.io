@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    ES2015vsLivescript语法糖比较
+  
+</title>
+
+<meta name="description" content="随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES2015vsLivescript语法糖比较">
+<meta property="og:url" content="http://blog.ken.moe/2016/08/03/ES2015vsLivescript语法糖比较/index.html">
+<meta property="og:site_name" content="Kenn's Blog">
+<meta property="og:description" content="随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟">
+<meta property="og:updated_time" content="2016-08-05T01:29:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES2015vsLivescript语法糖比较">
+<meta name="twitter:description" content="随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟">
+
+
+  <link rel="alternative" href="/atom.xml" title="Kenn&#39;s Blog" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?82812a48acebba20150b02d3fc5bab10";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Kenn&#39;s Blog</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Kenn&#39;s Blog</a></h1>
+    
+      <p class="subtitle">
+        听说这里是副标题?
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">随便放些笔记涂鸦什么的</div>
+        
+        
+          <div class="author">桜塚謙</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="https://cn.gravatar.com/avatar/e57739105ff8c92b6624e676f21a79e4?s=200"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES2015-LiveScript/">ES2015 LiveScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">2</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/sakurazukaken" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-ES2015vsLivescript语法糖比较" class="article article-type-post">
+  
+    <h1 class="article-header">
+      ES2015vsLivescript语法糖比较
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-03
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Language/">Language</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES2015-LiveScript/">ES2015 LiveScript</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟babel也是编译器嘛. 但是为了更好地熟悉ES6的新特性, 方便阅读其他项目的源码(毕竟ls这货有些小众), 在此将ES6新增的语法特性与ls做了下对比</p>
+<a id="more"></a>
+<h3 id="赋值解构-Assignment-Restructuring"><a href="#赋值解构-Assignment-Restructuring" class="headerlink" title="赋值解构(Assignment Restructuring)"></a>赋值解构(Assignment Restructuring)</h3><p>这部分ls和js没有什么太大的差别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//JavaScript</span></div><div class="line"><span class="keyword">var</span> &#123;foo&#125; = bar         <span class="comment">// var foo = bar.foo</span></div><div class="line"><span class="keyword">var</span> &#123;foo: baz&#125; = bar    <span class="comment">// var baz = bar.foo</span></div><div class="line"><span class="keyword">var</span> &#123;foo: &#123;bar&#125;&#125; = obj  <span class="comment">// var bar = obj.foo.bar 嵌套可以</span></div><div class="line"><span class="keyword">var</span> [a, ,b] = arr       <span class="comment">// var a = arr[0], b = arr[2]  数组也适用</span></div><div class="line"><span class="keyword">var</span> &#123;foo:[bar]&#125; = obj   <span class="comment">// var bar = ww.foo[0] 交叉嵌套也没问题</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">&#123;a=1, b=2&#125;</span>) </span>&#123;<span class="keyword">var</span> c = a + b&#125; <span class="comment">// 在参数表里也可以,还能指定默认值</span></div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#LiveScript</span></div><div class="line">&#123;foo&#125; = bar         <span class="comment"># var foo = bar.foo</span></div><div class="line">&#123;foo: baz&#125; = bar    <span class="comment"># var baz = bar.foo</span></div><div class="line">&#123;foo: &#123;bar&#125;&#125; = obj  <span class="comment"># var bar = obj.foo.bar 嵌套可以</span></div><div class="line">[a, ,b] = arr       <span class="comment"># var a = arr[0], b = arr[2]  数组也适用</span></div><div class="line">&#123;foo:[bar]&#125; = obj   <span class="comment"># var bar = ww.foo[0] 交叉嵌套也没问题</span></div><div class="line"></div><div class="line"><span class="keyword">function</span>(&#123;a=<span class="number">1</span>, b=<span class="number">2</span>&#125;) &#123;<span class="keyword">var</span> c = a + b&#125;  <span class="comment"># 在参数表里也可以,还能指定默认值</span></div></pre></td></tr></table></figure>
+<h3 id="扩散算子和剩余参数"><a href="#扩散算子和剩余参数" class="headerlink" title="扩散算子和剩余参数"></a>扩散算子和剩余参数</h3><p>听着好像很厉害, 其实就是那个…运算符和一个写在参数表里的语法糖, 这里还是没什么区别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//JavaScript</span></div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a, ...b</span>) </span>&#123;&#125;  <span class="comment">// b就是个装着剩下所有参数的数组啦, 记得...b要在参数表最后</span></div><div class="line">fn(...[a,b,c])        <span class="comment">// fn(a,b,c)等价, 其实就是个call和apply的变化嘛</span></div><div class="line">[a, ...[b,c], d]      <span class="comment">// [a, b, c, d] 嗯, 其实就是concat</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> [a, ...b] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] <span class="comment">// 复制解构也支持</span></div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#LiveScript</span></div><div class="line"><span class="function"><span class="params">(a, ...b)</span> -&gt;</span> <span class="string">'result'</span></div><div class="line">fn ...[a,b,c]</div><div class="line">[a, ...[b,c], d]</div><div class="line"></div><div class="line">[a, ...b] = &lt;[ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> ]&gt;</div></pre></td></tr></table></figure>
+<p>对比的时候看了下lsc和babel的编译文件, 发现babel比lsc稍微严谨一点, 会把…后的arr做一个转化, 就算你只是个arrayLike的obj也不会报错, lsc就是直接用变量了</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>这个也不多说了, 就是JS用的=&gt;胖箭头, ls 用的是 -&gt;瘦箭头 剩下区别不是很大</p>
+<p>就像吐槽一下当初用polymer心想这么超前的库怎么可能不支持箭头函数呢, 结果喜闻乐见遭遇this绑定问题. 被坑了好几天.</p>
+<h3 id="模板字面量-Template-Literals"><a href="#模板字面量-Template-Literals" class="headerlink" title="模板字面量(Template Literals)"></a>模板字面量(Template Literals)</h3><p>就是那个很厉害很厉害的backtick字符串啦</p>
+<p>差值方法虽然符号不太一样但是概念没什么差别, 但是那个函数前缀就有些不同了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line"><span class="comment">// JS用`实现字符串$&#123;&#125;作标示, 括号不能省略</span></div><div class="line"><span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span> <span class="comment">// "Hello " + name</span></div><div class="line"><span class="string">`I'm <span class="subst">$&#123;tody - birthday&#125;</span> years old`</span></div><div class="line"></div><div class="line"><span class="comment">// JS还支持个加函数前缀的功能</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">template,...parm</span>) </span>&#123;&#125;</div><div class="line">fn<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>, I'm <span class="subst">$&#123;id&#125;</span>`</span> </div><div class="line"><span class="comment">// template=["Hello ",", I'm ", ""] 最后会有个空串的注意</span></div><div class="line"><span class="comment">// parm=[name, id]</span></div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># LiveScript</span></div><div class="line"><span class="comment"># ls用双引号"来实现插值字符串, #&#123;&#125; 作为标示, 插值内容假如是一个变量又不与后面内容相邻时,可以省略括号</span></div><div class="line"><span class="string">"Hello <span class="subst">#&#123;name&#125;</span>!"</span> <span class="comment">#可以</span></div><div class="line"><span class="string">"Hello <span class="subst">#name</span>"</span>    <span class="comment">#可以</span></div><div class="line"><span class="string">"Hello <span class="subst">#name</span>!"</span>   <span class="comment">#不行</span></div><div class="line"><span class="string">"I'm <span class="subst">#&#123;tody - birthday&#125;</span> years old"</span></div><div class="line"></div><div class="line"><span class="comment"># LS没有函数前缀, 但它有个%前缀</span></div><div class="line">%<span class="string">"Hello <span class="subst">#&#123;name&#125;</span>, I'm <span class="subst">#&#123;id&#125;</span>"</span>   <span class="comment"># ["Hello ", name, ", I'm ", id] 没有最后的空串</span></div><div class="line">fn <span class="string">"Hello <span class="subst">#&#123;name&#125;</span>, I'm <span class="subst">#&#123;id&#125;</span>"</span> <span class="comment"># fn("Hello ", name, ", I'm ", id) 作为函数参数</span></div></pre></td></tr></table></figure>
+<h3 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h3><p>对变量参数名语法有些不同其他基本类似</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line">&#123;foo&#125;                   <span class="comment">// &#123;foo: foo&#125;</span></div><div class="line">&#123;[prefix+<span class="string">'moz'</span>: <span class="string">'bar'</span>]&#125; <span class="comment">// 变量参数名</span></div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># livescript</span></div><div class="line">&#123;foo&#125;                    <span class="comment"># &#123;foo: foo&#125;</span></div><div class="line">&#123;<span class="string">"<span class="subst">#&#123;prefix&#125;</span>moz"</span>: <span class="string">'bar'</span>&#125;  <span class="comment"># 能用字符串差值做变量名</span></div><div class="line">&#123;(prefix+<span class="string">'moz'</span>): <span class="string">'bar'</span>&#125;  <span class="comment"># 也可以用()</span></div><div class="line">&#123;(prefix+<span class="string">'moz'</span>)&#125;         <span class="comment"># 可以用动态变量名做解构可是编译出来的东西不是我们想的那样</span></div><div class="line">                         <span class="comment"># 参数内容其实是变量名这个字符串而不是它对应的内容, 还不如JS直接禁止呢</span></div></pre></td></tr></table></figure>
+<h3 id="类-Class"><a href="#类-Class" class="headerlink" title="类(Class)"></a>类(Class)</h3><p>值得一提的是JS是一个基于原型链的语言,所以不管是ES6还是LS提供的类都不过是基于原型继承的语法糖, 我个人其实是不太喜欢在JS中用类这个概念的, 总觉得这是属于强类型语言的概念. 可这些语法糖确实比一堆prototype, constructor和closure更加简洁易读, 所以我现行的做法是设计用原型链构思, 用类的形式来写代码, 具体ES6和LS的差别请看代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</div><div class="line">  <span class="comment">// 构造函数, new Car时调用, 其实就是构造子constructor啦</span></div><div class="line">  <span class="keyword">constructor</span> (fuel = 0) &#123;</div><div class="line">    <span class="keyword">this</span>.fuel = fuel</div><div class="line">    <span class="keyword">this</span>.distance = <span class="number">0</span></div><div class="line">    <span class="keyword">this</span>.prop = <span class="number">2</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 方法,  可以通过对象调用(new Car(5)).move(),实际上是prototype.move</span></div><div class="line">  <span class="comment">// 字段就只能写在构造函数里了</span></div><div class="line">  move () &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.fuel &lt; <span class="number">1</span>) &#123;</div><div class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">RangeError</span>(<span class="string">'Fuel tank is depleted'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.fuel--</div><div class="line">    <span class="keyword">this</span>.distance += <span class="keyword">this</span>.prop</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// static function 可以直接Car.isFaster() 调用</span></div><div class="line">  <span class="keyword">static</span> isFaster(left, right) &#123;  </div><div class="line">    <span class="keyword">return</span> left.speed &lt; right.speed  </div><div class="line">  &#125;</div><div class="line">  <span class="comment">/* 很不幸 static properties 不支持...不支持!!!</span></div><div class="line">     只能通过static getter setter来实现</div><div class="line">     数据要怎么隐藏呢?? 理论上可以用let, 但是现在babel只是把let变var</div><div class="line">     所以不用闭包的话你的隐藏会很不安全, 用闭包又看起来不够class, 十分卵痛 */</div><div class="line">&#125;</div><div class="line"><span class="comment">// 下面是关于继承</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tesla</span> <span class="keyword">extends</span> <span class="title">Car</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(fuel = 0) &#123;</div><div class="line">    <span class="keyword">super</span>(fuel*<span class="number">2</span>)</div><div class="line">  &#125;</div><div class="line">  move() &#123;</div><div class="line">    <span class="keyword">super</span>.move()</div><div class="line">    <span class="keyword">this</span>.distance += <span class="number">4</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># livescript</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span></div><div class="line">  <span class="comment"># 构造函数直接放一个函数就好了, 实际上也就是constructor</span></div><div class="line">  <span class="comment"># 和普通函数一样, @是this.的简写, 参数前加@会自动this.name = name</span></div><div class="line">  <span class="function"><span class="params">(@fuel = <span class="number">0</span>)</span> -&gt;</span></div><div class="line">    @distance = <span class="number">0</span></div><div class="line">  <span class="comment"># 方法和对象字面量差不多可以直接写</span></div><div class="line">  <span class="comment"># 这个字段吧, 其实有点不正经, 虽然只能通过实例访问却是公共的</span></div><div class="line">  <span class="comment"># 在原型继承大家都懂得, prototype.prop嘛, 可放在类里就有点难懂了</span></div><div class="line">  prop: <span class="number">2</span></div><div class="line">  move:<span class="function"> !-&gt;</span></div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> RangeError <span class="string">'Fuel tank is depleted'</span> <span class="keyword">if</span> @fuel &lt; <span class="number">1</span></div><div class="line">    @fuel--</div><div class="line">    @distance += @prop</div><div class="line">  @is-faster = <span class="function"><span class="params">(left, right)</span> -&gt;</span> left.speed &lt; right.speed</div><div class="line">  <span class="comment"># 可以实现static properties, 其实就是constructor的字段</span></div><div class="line">  <span class="comment"># 使用方法如下用@@来获得this.constructor获取参数</span></div><div class="line">  @static-prop = <span class="number">10</span></div><div class="line">  @static-prop-plus10 =<span class="function"> -&gt;</span> <span class="number">10</span> + @@static-prop</div><div class="line"><span class="comment"># 下面是继承</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tesla</span> <span class="keyword">extends</span> <span class="title">Car</span></span></div><div class="line">  <span class="function"><span class="params">(fuel)</span> -&gt;</span> <span class="keyword">super</span> fule*<span class="number">2</span></div><div class="line">  move:<span class="function"> !-&gt;</span></div><div class="line">    <span class="keyword">super</span> ...</div><div class="line">    @distance += <span class="number">2</span></div></pre></td></tr></table></figure>
+<p>通过前面的对比可以看出来其实ES6的class语法糖虽然保证了oop的特性但对我这种用原型链设计的人真的是一点也不甜. 没有原型字段, 没有静态字段, 对于好多使用场景都很不方便. 而且LS的类还有一些方便的语法糖, 我在下面列出, 也算做个复习</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># livescript</span></div><div class="line"><span class="comment"># implements 接口</span></div><div class="line"><span class="comment"># 会把接口obj内容import进class, 可以implement多个接口</span></div><div class="line">Renameable =</div><div class="line">  set-name: <span class="function"><span class="params">(@name)</span> -&gt;</span></div><div class="line">  get-name:<span class="function"> -&gt;</span> @name ? @id</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="title">implements</span> <span class="title">Renameable</span></span><span class="function"></span></div><div class="line">  -&gt; @id = Math.random!</div><div class="line">a = <span class="keyword">new</span> A</div><div class="line">a.get-name!         <span class="comment"># random number</span></div><div class="line">a.set-name <span class="string">'name'</span>   </div><div class="line">a.get-name!         <span class="comment"># 'name'</span></div><div class="line"></div><div class="line"><span class="comment"># 不用new 自动返回实例, 只需要用~代替构造函数的-</span></div><div class="line"><span class="comment"># 在$系中这个貌似挺常见的</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">  <span class="function"><span class="params">(@x)</span> ~&gt;</span></div><div class="line">a = A <span class="number">4</span></div><div class="line">a.x         <span class="comment"># 4</span></div><div class="line"></div><div class="line"><span class="comment"># ~&gt;绑定函数, 这个在平时LS做thatforthis绑定的时候用过了</span></div><div class="line"><span class="comment"># 都是绑定this, 推荐在类声明默认用这个</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">  x: <span class="number">10</span></div><div class="line">  bound:<span class="function"> ~&gt;</span> @a</div><div class="line">  unbound:<span class="function"> -&gt;</span> @a</div><div class="line">a = <span class="keyword">new</span> A</div><div class="line">obj =</div><div class="line">  x: <span class="number">1</span></div><div class="line">  bound: a.bound</div><div class="line">  unbound: a.unbound</div><div class="line">obj.bound!    <span class="comment"># 10</span></div><div class="line">obj.unbound!  <span class="comment"># 1</span></div><div class="line"></div><div class="line"><span class="comment"># 修改prototype字段和方法</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">  prop: <span class="number">10</span></div><div class="line">  func:<span class="function"> -&gt;</span></div><div class="line">    @prop</div><div class="line">A::prop = <span class="number">2</span>   <span class="comment"># 不用实例也可以修改prop</span></div><div class="line">A ::=         <span class="comment"># 改变多个时的写法</span></div><div class="line">  prop: <span class="number">3</span></div><div class="line">  func:<span class="function"> -&gt;</span></div><div class="line">    @prop + <span class="number">2</span></div><div class="line"></div><div class="line"><span class="comment"># 实现getter, setter, 只需冒号后面来个~</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">  x:~<span class="function"></span></div><div class="line">  	-&gt; @_x</div><div class="line">    <span class="function"><span class="params">([width, height])</span> -&gt;</span> @_x = width * height</div><div class="line">a = <span class="keyword">new</span> A</div><div class="line">a.x = [<span class="number">2</span>, <span class="number">3</span>]</div><div class="line">a.x       <span class="comment"># 6</span></div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我总结的这部分只是ES6中的语法糖部分, 关于新增的Symble, Proxy类型, Array,String类型扩展的方法, 和let块作用域都是需要浏览器或着其他库的支持的, 对比就没什么意义了</p>
+<p>开始我就表明了我自己的想法, 在浏览器大范围支持ES6而不是靠JS2JScompiler前, 我还不打算改变自己项目的写法, 写这个对比也是为了通过自己熟悉的ls来更快的学习记忆js的新特性, 也能让更多不熟悉ls人的借此来和它混个脸熟</p>
+<p>关于ES6的新特性我参考了<a href="https://ponyfoo.com/articles/es6" target="_blank" rel="external">ES6 Overview in 350 Bullet Points</a>的一些例子, 没有去问作者要授权不知道可不可以,假如不行我就把示例修改一下</p>
+<p>关于LS的举例我有部分直接搬了了<a href="http://livescript.net/#oop" target="_blank" rel="external">livescript的官网</a> 的例子</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sakurazukaken'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 Kenn&#39;s Blog - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

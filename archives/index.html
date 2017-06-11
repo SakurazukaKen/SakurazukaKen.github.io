@@ -98,21 +98,21 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">Category</a>
-                
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
                 <a href="javascript:;">Tag</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES2015-LiveScript/">ES2015 LiveScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
                 <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">1</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">2</span></li></ul>
               </li>
             
           
@@ -167,9 +167,112 @@
       
       <section class="archives-wrap">
         <div class="archive-year-wrap">
+          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/06/11/部署图学习心得/" >
+  部署图学习心得
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/06/11/部署图学习心得/"><span class="article-date">
+  2017-06-11
+</span>
+</a>
+        
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <h1 id="部署图是什么"><a href="#部署图是什么" class="headerlink" title="部署图是什么"></a>部署图是什么</h1><p>部署图是系统物理架构的模型, 显示了软件和硬件组件间的关系和过程的物理分工. 通常会在开发过程的实现阶段来编写. 表现分布式系统中不容节点的物理组织关系, 每个节点存放的工件和工件所实现的组件和其他产物. 其中node可以是计算机, 传感器, 打印机等硬件设备或者其他能够提供系统运行环境的设备(类似docker或者vm), 说完了部署图是什么, 我们来介绍下部署图的主要元素</p>
+<h1 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h1><h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>node是用来表示系统中计算资源的元素, 例如个人计算机, 服务器, 传感器或者vm, docker等, </p>
+<p>node用path链接可以表示节点间的网络结构</p>
+<h2 id="Execution-environment"><a href="#Execution-environment" class="headerlink" title="Execution environment"></a>Execution environment</h2><p>运行环境是是一种用来表示特定执行环境的node, 包括操作系统和BDMS</p>
+<h2 id="Artifacts"><a href="#Artifacts" class="headerlink" title="Artifacts"></a>Artifacts</h2><p>工件用来表示软件系统的物理实体, 比如可执行文件, 引用库, 软件插件, 文档或者是数据库</p>
+<h2 id="Deployment-specifications"><a href="#Deployment-specifications" class="headerlink" title="Deployment specifications"></a>Deployment specifications</h2><p>部署规格是实际上就是部署的可配置文件, 类如一个xml文件或者文档, 用来表示工件如何部署在节点上</p>
+<h2 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h2><p>连接表示各组件间交互的通信路径, 通常带有通信协议</p>
+<h1 id="例子分析"><a href="#例子分析" class="headerlink" title="例子分析"></a>例子分析</h1><p><img src="/Users/buress/Desktop/Screen Shot 2017-06-11 at 11.42.58 PM.png" alt="Screen Shot 2017-06-11 at 11.42.58 PM"></p>
+<p>以书中图为例, 可以看到服务器dell poweredge 3400上运行有red hat系统, 在该系统之上运行着PostgreSQL 10DBMS, 另一台服务器Dell powered 3600上运行着apache 和tomcat servlet runtime  在该runtime中运行有webstore.war这个工件, tomcat与daatabase通过sql语句交互, 而客户端有一台genericPc部署工件myrichGUIClient.ext, 与apache通过soap/http协议通讯, 另一台运行着浏览器, 与apache通过http协议通讯</p>
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>部署图和组件图不同, 部署图表示的是组件和工件在部署环境中的的关系, 而组件图则表示了组件和工件在软件系统中的组成关系.</p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+      
+        </div></section>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
           <h1><a href="/archives/2016" class="archive-year">2016</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2016/08/03/ES2015vsLivescript语法糖比较/" >
+  ES2015vsLivescript语法糖比较
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2016/08/03/ES2015vsLivescript语法糖比较/"><span class="article-date">
+  2016-08-03
+</span>
+</a>
+        
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Language/">Language</a></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES2015-LiveScript/">ES2015 LiveScript</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <p>随着babel的兴起,越来越多的人不用等待落后的浏览器更新,可以自由的使用JavaScript ES6, ES2016甚至更新的草案阶段的语法特性来进行开发, js语法的逐渐成熟也开始把coffee, livescript等一系列预编译语言放置到一个很尴尬的位置. 由于当初老板的强力安利和个人对livescript灵活易读的语法的喜爱, 至少在浏览器大规模支持ES6前我还不打算跳出ls的坑, 毕竟babel也是编译器嘛. 但是为了更好地熟悉ES6的新特性, 方便阅读其他项目的源码(毕竟ls这货有些小众), 在此将ES6新增的语法特性与ls做了下对比</p>
+          <p>
+            <a href="/2016/08/03/ES2015vsLivescript语法糖比较/">
+              Read More
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -216,7 +319,7 @@
 
           <div class="main-footer">
   
-    © 2016 Kenn&#39;s Blog - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2017 Kenn&#39;s Blog - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 
