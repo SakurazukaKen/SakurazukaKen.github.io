@@ -8,18 +8,19 @@
 
 <title>
   
-    Archive: 2017
+    javascript
   
 </title>
 
 <meta name="description" content="随便放些笔记涂鸦什么的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kenn's Blog">
-<meta property="og:url" content="http://blog.ken.moe/archives/2017/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript">
+<meta property="og:url" content="http://blog.ken.moe/2017/06/11/javascript/index.html">
 <meta property="og:site_name" content="Kenn's Blog">
 <meta property="og:description" content="随便放些笔记涂鸦什么的">
+<meta property="og:updated_time" content="2017-06-11T15:52:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kenn's Blog">
+<meta name="twitter:title" content="javascript">
 <meta name="twitter:description" content="随便放些笔记涂鸦什么的">
 
 
@@ -158,134 +159,67 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-javascript" class="article article-type-post">
+  
+    <h1 class="article-header">
+      javascript
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/06/11/GoF-in-javascript/" >
-  GoF_in_javascript
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/06/11/GoF-in-javascript/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2017-06-11
 </span>
-</a>
-        
 
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GoF/">GoF</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="GoF-在前端开发中的应用"><a href="#GoF-在前端开发中的应用" class="headerlink" title="GoF 在前端开发中的应用"></a>GoF 在前端开发中的应用</h1>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/06/11/javascript/" >
-  javascript
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/06/11/javascript/"><span class="article-date">
-  2017-06-11
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/06/11/部署图学习心得/" >
-  部署图学习心得
-</a>
-
-      </h3>
+  </div>
+  <div class="article-entry">
+    
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2017/06/11/部署图学习心得/"><span class="article-date">
-  2017-06-11
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="部署图是什么"><a href="#部署图是什么" class="headerlink" title="部署图是什么"></a>部署图是什么</h1><p>部署图是系统物理架构的模型, 显示了软件和硬件组件间的关系和过程的物理分工. 通常会在开发过程的实现阶段来编写. 表现分布式系统中不容节点的物理组织关系, 每个节点存放的工件和工件所实现的组件和其他产物. 其中node可以是计算机, 传感器, 打印机等硬件设备或者其他能够提供系统运行环境的设备(类似docker或者vm), 说完了部署图是什么, 我们来介绍下部署图的主要元素</p>
-<h1 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h1><h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>node是用来表示系统中计算资源的元素, 例如个人计算机, 服务器, 传感器或者vm, docker等, </p>
-<p>node用path链接可以表示节点间的网络结构</p>
-<h2 id="Execution-environment"><a href="#Execution-environment" class="headerlink" title="Execution environment"></a>Execution environment</h2><p>运行环境是是一种用来表示特定执行环境的node, 包括操作系统和BDMS</p>
-<h2 id="Artifacts"><a href="#Artifacts" class="headerlink" title="Artifacts"></a>Artifacts</h2><p>工件用来表示软件系统的物理实体, 比如可执行文件, 引用库, 软件插件, 文档或者是数据库</p>
-<h2 id="Deployment-specifications"><a href="#Deployment-specifications" class="headerlink" title="Deployment specifications"></a>Deployment specifications</h2><p>部署规格是实际上就是部署的可配置文件, 类如一个xml文件或者文档, 用来表示工件如何部署在节点上</p>
-<h2 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h2><p>连接表示各组件间交互的通信路径, 通常带有通信协议</p>
-<h1 id="例子分析"><a href="#例子分析" class="headerlink" title="例子分析"></a>例子分析</h1><p><img src="/Users/buress/Desktop/Screen Shot 2017-06-11 at 11.42.58 PM.png" alt="Screen Shot 2017-06-11 at 11.42.58 PM"></p>
-<p>以书中图为例, 可以看到服务器dell poweredge 3400上运行有red hat系统, 在该系统之上运行着PostgreSQL 10DBMS, 另一台服务器Dell powered 3600上运行着apache 和tomcat servlet runtime  在该runtime中运行有webstore.war这个工件, tomcat与daatabase通过sql语句交互, 而客户端有一台genericPc部署工件myrichGUIClient.ext, 与apache通过soap/http协议通讯, 另一台运行着浏览器, 与apache通过http协议通讯</p>
-<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>部署图和组件图不同, 部署图表示的是组件和工件在部署环境中的的关系, 而组件图则表示了组件和工件在软件系统中的组成关系.</p>
-
-        
-      </div>
-    </div>
-
-  
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
 
 
+    
+
+  </footer>
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sakurazukaken'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
 
